@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @exam_cart = Examcart.all
+    @count_cart = Examcart.where(user_id: session[:user_id]).count
     @user_exams = @user.user_exams.includes(:exam) 
   end
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def selecting
-    @title = "Following"
+    @title = "Selecting"
     @users = @user.selecting.paginate(page: params[:page])
     render = 'show_select'
   end

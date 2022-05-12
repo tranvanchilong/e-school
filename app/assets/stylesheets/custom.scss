@@ -1299,3 +1299,47 @@ input.btn.btn-primary {
     border-radius: 0px 15px 15px 0px;
   }
 }
+//exam_cart
+input {
+  background-color: #1b7e34;
+  color: white;
+  font-weight: bold;
+  margin-top: 3px;
+  border-radius: 38px;
+  padding: 10px 0px;
+  width: 250px;
+}
+
+input.select {
+  background-color: rgb(190, 62, 62);
+}
+
+h6 {
+  font-size: 35px;
+  background-color: #204d74;
+  color: white;
+  font-weight: bold;
+  margin-top: 50px;
+  border-radius: 38px;
+  padding: 20px 50%;
+  width: 20px;
+}
+
+h6.cart {
+  font-size: 17px;
+  background-color: #204d74;
+  color: white;
+  font-weight: bold;
+  margin-top: 3px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  width: 250px;
+}
+
+str {
+  background-color: rgb(15, 127, 231);
+  color: white;
+  font-weight: bold;
+  border-radius: 38px;
+  padding: 10px 20px;
+}

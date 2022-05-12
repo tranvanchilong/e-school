@@ -1,7 +1,7 @@
 .col-lg-3
   - if logged_in? && current_user.admin?
       h2.my-4
-        = t(".admin_title")
+        = button_to t(".admin_title")
       .list-group
         = link_to t(".admin_func1"), admin_exams_path, class: "list-group-item1"
         = link_to t(".admin_func2"), admin_users_path, class: "list-group-item1"
@@ -13,6 +13,8 @@
       .list-group
         = link_to t(".user_func1"), client_exams_path, class: "list-group-item1"
         - if logged_in? && current_user.user?
-          = link_to t(".user_func2"), client_user_history_exams_path, class: "list-group-item1"
+          = link_to t(".user_func2"), user_user_history_exams_path, class: "list-group-item1"
+          -if @count_cart
+            = render 'shared/stats'
         - else
           = link_to t(".user_func2"), "#", class: "list-group-item1"
