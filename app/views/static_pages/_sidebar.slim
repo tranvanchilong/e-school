@@ -9,7 +9,7 @@
         = link_to t(".admin_func4"), "#", class: "list-group-item1"
   - else
       h2.my-4
-        = t(".user_title")
+        = button_to t(".user_title")
       .list-group
         = link_to t(".user_func1"), client_exams_path, class: "list-group-item1"
         - if logged_in? && current_user.user?
