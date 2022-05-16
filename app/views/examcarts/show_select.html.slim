@@ -15,7 +15,7 @@
                   th.border-0.bg-light scope="col" 
                     .py-2.text-uppercase time limit
                   th.border-0.bg-light scope="col" 
-                    .py-2.text-uppercase Delete
+                    .py-2.text-uppercase delete
               tbody
               - @exam_carts.each do |exam_cart|
                 tr
@@ -29,8 +29,10 @@
                   td.border-0.align-middle
                     strong = exam_cart.exam.time_limit
                   td.border-0.align-middle
-                    a.text-dark href="#" 
-                      i.fa.fa-trash
+                    = link_to examcart_path(exam_cart), method: :delete, data: { confirm: 'Are you sure?' } do
+                      i.fa.fa-trash-o
                   td.border-0.align-middle
-                    a.text-dark href="#" 
-                      str Start
+                    = link_to t("Start"), user_exam_path(exam_cart.exam.id), class: "str", type: "button", data: {id: "#{exam_cart.exam.id}", time_limit: "#{exam_cart.exam.time_limit}"}
+                  / td.border-0.align-middle  
+                  /   = button_to "i.icon-search", examcart_path(exam_cart),
+                  /       method: :delete,data: {confirm:"You sure?"}, class: "select"                     

@@ -18,12 +18,12 @@ class ExamcartsController < ApplicationController
     @rel= Examcart.new(user_id: session[:user_id],
                                 exam_id: other_exam.id)
                                 @rel.save
-                                redirect_to(root_url)
+                                redirect_back(fallback_location: root_path)
   end
  
   def destroy
     @exam = Examcart.find_by(id: params[:id]).exam
     current_user.unselect(@exam)
-    redirect_to(root_url)
+    redirect_back(fallback_location: root_path)
   end
 end

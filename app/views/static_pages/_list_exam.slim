@@ -4,9 +4,9 @@
     .col-md-4
       .card.card-course-item.test-exam
         a href="#"
-          img.card-img-top alt=("KHOA KIEM TRA SQL") 
+          img.card-img-top alt=("KHOA KIEM TRA SQL") src="/assets/anh1.png" /
         .card-body
-          a href="#"
+          a href="#{exam_details_path(exam_id: exam)}"
             h5.card-title Bai Test #{exam.name}
           p.card-text.text Giup on tap noi dung #{exam.name}
           - unless current_user?(@user)

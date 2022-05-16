@@ -1,0 +1,40 @@
+.px-4.px-lg-0
+    .container.text-white.py-5.text-center
+      h1.display-4 Achiviement of #{@user.name}
+      .media
+      label Number of tests:  #{@user_exams.count} 
+      .media
+      label Number of passes: #{@user_exams.where(is_passed: true).count}
+    .pb-5
+      .container
+        .row
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th.border-0.bg-light scope="col" 
+                      .p-2.px-3.text-uppercase bài kiểm tra
+                    th.border-0.bg-light scope="col" 
+                      .py-2.text-uppercase thời gian hoàn thành
+                    th.border-0.bg-light scope="col" 
+                      .py-2.text-uppercase điểm đạt được
+                    th.border-0.bg-light scope="col" 
+                      .py-2.text-uppercase kết quả
+                    th.border-0.bg-light scope="col" 
+                      .py-2.text-uppercase 
+                tbody
+                - @user_exams.each do |user_exam| 
+                  tr
+                    th.border-0 scope="row" 
+                      .p-2 
+                        .ml-3.d-inline-block.align-middle
+                          h5.mb-0
+                            a.text-dark.d-inline-block.align-middle href="#" #{user_exam.exam.name}
+                    td.border-0.align-middle
+                      strong  #{user_exam.completed_time}
+                    td.border-0.align-middle
+                      strong  #{user_exam.total_score}
+                    td.border-0.align-middle
+                      strong  = is_passed(user_exam)
+                    td.border-0.align-middle
+                      = link_to "Xem thêm", user_user_history_exam_path(id: user_exam.id, amount_test: user_exam.total_test), class: "str"

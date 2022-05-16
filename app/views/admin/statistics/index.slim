@@ -1,0 +1,43 @@
+.px-4.px-lg-0
+  .container.text-white.py-5.text-center
+    h1.display-4 Statistic Exam
+  .pb-5
+    .container
+      .row
+          .table-responsive
+            table.table
+              thead
+                tr
+                  th.border-0.bg-light scope="col" 
+                    .p-2.px-3.text-uppercase Tên bài thi
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Số người thi
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Điểm thấp nhất
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Điểm cao nhất
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Diểm trung bình
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Số lượt thi
+              tbody
+              - @exams.each do |exam|
+                tr
+                -if UserExam.where(exam_id: exam.id).count >0
+                  th.border-0 scope="row" 
+                    .p-2 
+                      .ml-3.d-inline-block.align-middle
+                        h5.mb-0
+                          a.text-dark.d-inline-block.align-middle href="#" = exam.name
+                  td.border-0.align-middle
+                    strong = UserExam.where(exam_id: exam.id).distinct.pluck(:user_id).count
+                  td.border-0.align-middle
+                    strong = UserExam.where(exam_id: exam.id).minimum(:total_score)
+                  td.border-0.align-middle
+                    strong = UserExam.where(exam_id: exam.id).maximum(:total_score)
+                  td.border-0.align-middle
+                    strong = UserExam.where(exam_id: exam.id).average(:total_score).truncate(2)
+                  td.border-0.align-middle
+                    strong = UserExam.where(exam_id: exam.id).count 
+                  td.border-0.align-middle
+                    a.str href="historys?exam_id=#{exam.id}" = " Xem tất cả"

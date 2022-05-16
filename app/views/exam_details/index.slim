@@ -1,0 +1,71 @@
+.col-lg-9 
+  body
+    .container
+      .card
+        .container-fliud
+          .wrapper.row
+            .preview.col-md-6
+              .preview-pic.tab-content
+                #pic-1.tab-pane.active
+                  img src="http://placekitten.com/400/252" /
+              ul.preview-thumbnail.nav.nav-tabs
+            .details.col-md-6
+              h3.product-title Chi tiết bài thi #{@exam.name} 
+              .rating
+                .stars
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star
+                  span.fa.fa-star
+                span.review-no 41 reviews
+              p.product-description Giúp ôn tập và bô sung kiến thức #{@exam.name}
+              h4.price
+                | Số lượt thi:
+                span #{UserExam.where(exam_id: @exam.id).count}
+              p.vote
+                strong (87 votes)
+              h5.sizes
+                | Điểm vượt qua:
+                span.size data-toggle="tooltip" title="small"  #{@exam.pass_score}
+              h5.colors
+                | Thời gian thi:
+                span.size data-toggle="tooltip" title="small"  #{@exam.time_limit}'
+              .action
+                - unless current_user?(@user)
+                  #select_form
+                    - if current_user.selecting?(@exam)
+                      = form_for(current_user.active_examcarts.find_by(exam_id: @exam.id), 
+                        html: { method: :delete }) do |f|                                          
+                        = f.submit "Unselect", class: "input"
+                    - else
+                      = form_for(current_user.active_examcarts.build) do |f|
+                        div= hidden_field_tag :exam_id, @exam.id
+                        = f.submit "Select", class: "input select"
+
+h1
+  | Exam Comments:
+br/
+- @exam.comments.each do |comment|
+  div
+    span.user
+      = link_to gravatar_for(comment.user, size: 50), comment.user
+      h3 = comment.user.name 
+      |:
+    br/
+    span.content
+      = comment.content
+    br/
+    span.timestamp.text-success
+      = "Commented #{time_ago_in_words(comment.created_at)} ago."
+      - if current_user == comment.user
+        = link_to "Delete", comment , method: :delete, data: {confirm: "You sure?"}
+span#form-status
+  = form_for Comment.new do |f|
+    = render 'shared/error_messages', object: f.object
+    .field
+      = f.hidden_field :exam_id, value: @exam.id
+      = f.hidden_field :user_id, value: current_user.id
+      = f.text_area :content, placeholder: "Compose new comment...", class: "form-control"
+    = f.submit "Comment", class: "select"
+

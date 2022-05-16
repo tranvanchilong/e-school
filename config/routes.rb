@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
     namespace :admin do
       resources :users
+      resources :statistics, only: [:index]
+      resources :historys, only: [:index]
       resources :exams do
         resources :questions do
           resources :answers
@@ -34,10 +36,12 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :achievements, only: [:index]
+    resources :achiviements, only: [:index]
     resources :account_activations, only:[:edit]
     resources :password_resets
     resources :examcarts, only: [:show_select, :create, :destroy]
     resources :static_pages, only: [:create, :destroy]
+    resources :exam_details, only: [:index]
+    resources :comments
   end
 end

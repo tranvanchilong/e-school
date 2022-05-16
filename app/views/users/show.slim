@@ -19,7 +19,9 @@
           | NAME
         p= @user.name
         h3
-          = button_to 'Xem thành tích cá nhân' 
+          = link_to 'Xem thành tích cá nhân', achiviements_path(user_id: @user.id)
+        h3
+          = link_to 'Update Information', edit_user_path(id: @user.id) 
       .information_left
         h3
           | EMAIL
