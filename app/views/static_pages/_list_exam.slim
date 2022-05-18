@@ -4,7 +4,10 @@
     .col-md-4
       .card.card-course-item.test-exam
         a href="#"
-          img.card-img-top alt=("KHOA KIEM TRA SQL") src="/assets/anh1.png" /
+          - if exam.image.blank?
+             img.card-img-top src="https://allimages.sgp1.digitaloceanspaces.com/tipeduvn/2022/02/1643790749_699_50-Anh-Meo-Cute-Ngau-Hinh-Avatar-Meo-De-Thuong.jpg"
+          - else
+              img.card-img-top alt=("KHOA KIEM TRA SQL") src="#{exam.image.image_url}"
         .card-body
           a href="#{exam_details_path(exam_id: exam)}"
             h5.card-title Bai Test #{exam.name}

@@ -1,6 +1,7 @@
 .px-4.px-lg-0
     .container.text-white.py-5.text-center
       h1.display-4 Achiviement of #{@user.name}
+      h3.fa.fa-trophy
       .media
       label Number of tests:  #{@user_exams.count} 
       .media
@@ -37,4 +38,4 @@
                     td.border-0.align-middle
                       strong  = is_passed(user_exam)
                     td.border-0.align-middle
-                      = link_to "Xem thêm", user_user_history_exam_path(id: user_exam.id, amount_test: user_exam.total_test), class: "str"
+                      = link_to "Xem thêm", client_user_history_exam_path(id: user_exam.id, amount_test: user_exam.total_test), class: "str"

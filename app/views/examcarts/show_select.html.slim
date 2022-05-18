@@ -1,6 +1,7 @@
 .px-4.px-lg-0
   .container.text-white.py-5.text-center
-    h1.display-4 Exam cart
+    h1.display-4 Exam cart 
+    h3.glyphicon.glyphicon-shopping-cart
   .pb-5
     .container
       .row
@@ -32,7 +33,4 @@
                     = link_to examcart_path(exam_cart), method: :delete, data: { confirm: 'Are you sure?' } do
                       i.fa.fa-trash-o
                   td.border-0.align-middle
-                    = link_to t("Start"), user_exam_path(exam_cart.exam.id), class: "str", type: "button", data: {id: "#{exam_cart.exam.id}", time_limit: "#{exam_cart.exam.time_limit}"}
-                  / td.border-0.align-middle  
-                  /   = button_to "i.icon-search", examcart_path(exam_cart),
-                  /       method: :delete,data: {confirm:"You sure?"}, class: "select"                     
+                    = link_to t("Start"), client_exam_path(exam_cart.exam.id), class: "str", type: "button", data: {id: "#{exam_cart.exam.id}", time_limit: "#{exam_cart.exam.time_limit}"}                    

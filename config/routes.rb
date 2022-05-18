@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     resources :examcarts, only: [:show_select, :create, :destroy]
     resources :static_pages, only: [:create, :destroy]
     resources :exam_details, only: [:index]
-    resources :comments
+    resources :comments, only: [:create, :destroy]
+    resources :star_ratings
   end
 end

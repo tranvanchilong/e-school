@@ -18,7 +18,7 @@
                   span.fa.fa-star.checked
                   span.fa.fa-star
                   span.fa.fa-star
-                span.review-no 41 reviews
+                / span.review-no 41 reviews
               p.product-description Giúp ôn tập và bô sung kiến thức #{@exam.name}
               h4.price
                 | Số lượt thi:
@@ -43,29 +43,56 @@
                         div= hidden_field_tag :exam_id, @exam.id
                         = f.submit "Select", class: "input select"
 
-h1
-  | Exam Comments:
-br/
-- @exam.comments.each do |comment|
-  div
-    span.user
-      = link_to gravatar_for(comment.user, size: 50), comment.user
-      h3 = comment.user.name 
-      |:
-    br/
-    span.content
-      = comment.content
-    br/
-    span.timestamp.text-success
-      = "Commented #{time_ago_in_words(comment.created_at)} ago."
-      - if current_user == comment.user
-        = link_to "Delete", comment , method: :delete, data: {confirm: "You sure?"}
-span#form-status
-  = form_for Comment.new do |f|
-    = render 'shared/error_messages', object: f.object
-    .field
-      = f.hidden_field :exam_id, value: @exam.id
-      = f.hidden_field :user_id, value: current_user.id
-      = f.text_area :content, placeholder: "Compose new comment...", class: "form-control"
-    = f.submit "Comment", class: "select"
+- if logged_in?
+  .container.d-flex.justify-content-center.mt-5
+    .card.text-center.mb-5
+      .circle-image
+        span.dot
+        span.name.mb-1.fw-500 Đánh giá bài thi 
+        = form_for StarRating.new do |f|
+          .rating
+            input#5 name="rating" type="radio" value="5" /
+            label for="5"  ☆
+            input#4 name="rating" type="radio" value="4" /
+            label for="4"  ☆
+            input#3 name="rating" type="radio" value="3" /
+            label for="3"  ☆
+            input#2 name="rating" type="radio" value="2" /
+            label for="2"  ☆
+            input#1 name="rating" type="radio" value="1" /
+            label for="1"  ☆
+          .buttons.px-4.mt-0
+              = render 'shared/error_messages', object: f.object
+          .field
+            = f.hidden_field :exam_id, value: @exam.id
+            = f.hidden_field :user_id, value: current_user.id
+            = f.hidden_field :rating, value: "value"
+            button.btn.btn-warning.btn-block.rating-submit Gửi đánh giá
+            |.
 
+- if logged_in?
+  h1
+    | Exam Comments:
+  br/
+  - @exam.comments.each do |comment|
+    div
+      span.user
+        = link_to gravatar_for(comment.user, size: 50), comment.user
+        h3 = comment.user.name 
+        |
+      br/
+      span.content
+        = comment.content
+      br/
+      span.timestamp.text-success
+        = "Commented #{time_ago_in_words(comment.created_at)} ago."
+        - if current_user == comment.user
+          = link_to "Delete", comment , method: :delete, data: {confirm: "You sure?"}
+  span#form-status
+    = form_for Comment.new do |f|
+      = render 'shared/error_messages', object: f.object
+      .field
+        = f.hidden_field :exam_id, value: @exam.id
+        = f.hidden_field :user_id, value: current_user.id
+        = f.text_area :content, placeholder: "Compose new comment...", class: "form-control"
+      = f.submit "Comment", class: "select"

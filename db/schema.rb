@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_15_183741) do
+ActiveRecord::Schema.define(version: 2022_05_17_172822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,16 @@ ActiveRecord::Schema.define(version: 2022_05_15_183741) do
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
+  create_table "star_ratings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "exam_id"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exam_id"], name: "index_star_ratings_on_exam_id"
+    t.index ["user_id"], name: "index_star_ratings_on_user_id"
+  end
+
   create_table "user_exams", force: :cascade do |t|
     t.bigint "exam_id", null: false
     t.bigint "user_id", null: false
@@ -113,6 +123,8 @@ ActiveRecord::Schema.define(version: 2022_05_15_183741) do
   add_foreign_key "history_do_exams", "questions"
   add_foreign_key "history_do_exams", "users"
   add_foreign_key "questions", "exams"
+  add_foreign_key "star_ratings", "exams"
+  add_foreign_key "star_ratings", "users"
   add_foreign_key "user_exams", "exams"
   add_foreign_key "user_exams", "users"
 end

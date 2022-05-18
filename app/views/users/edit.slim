@@ -1,19 +1,19 @@
 - provide(:title,"Edit user")
 .row
   .col-md-6.col-md-offset-3.form-profile
-    h1.center Update your profile
-    - if @user.image.blank?
-      .gravatar_edit
-        img.img_profile src="https://allimages.sgp1.digitaloceanspaces.com/tipeduvn/2022/02/1643790749_699_50-Anh-Meo-Cute-Ngau-Hinh-Avatar-Meo-De-Thuong.jpg"
-    - else
-      .avatar_edit
-        img.avatar-user alt="#{@user.name}" src="#{@user.image.image_url}"
+    h1.center Update profile
     .update_user
       = form_for @user, :html => { :multipart => true } do |f|
         = f.label :'Image'
         = render'shared/error_messages',object: @user
         = f.fields_for :image_attributes do |image_f|
           = image_f.file_field :image_url, class: "edit_user"
+          - if @user.image.blank?
+            .gravatar_edit
+              img.img_profile src="https://allimages.sgp1.digitaloceanspaces.com/tipeduvn/2022/02/1643790749_699_50-Anh-Meo-Cute-Ngau-Hinh-Avatar-Meo-De-Thuong.jpg"
+          - else
+            .avatar_edit
+              img.img_profile alt="#{@user.name}" src="#{@user.image.image_url}"
         = f.label :name
         = f.text_field :name, class:'form-control'
         = f.label :email

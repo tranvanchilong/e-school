@@ -3,6 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :load_user, only: [:destroy, :show]
 
   def index
+    @user = User.find_by(id: params[:user_id])
     @users = User.all.paginate(page: params[:page], per_page: 7)
   end
 

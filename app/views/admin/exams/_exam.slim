@@ -1,6 +1,9 @@
 tr
   td
-    /img.avatar-exam alt="#{exam.name}" src="#{exam.image.image_url}"
+    - if exam.image.blank?
+        img.avatar-exam src="https://allimages.sgp1.digitaloceanspaces.com/tipeduvn/2022/02/1643790749_699_50-Anh-Meo-Cute-Ngau-Hinh-Avatar-Meo-De-Thuong.jpg"
+    - else
+        img.avatar-exam alt="#{exam.name}" src="#{exam.image.image_url}"
   td
     = exam.name
   td

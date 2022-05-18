@@ -1,6 +1,7 @@
 class Exam < ApplicationRecord
   has_many :user_exams, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :star_ratings, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, through: :questions
   has_one :image, as: :imageable, dependent: :destroy

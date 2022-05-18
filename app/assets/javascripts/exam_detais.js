@@ -1,11 +1,10 @@
 $(document).ready(function () {
-  $('input[type="radio"][data-behavior="toggle-products"]').click(function (
-    evt
-  ) {
-    if ($(this).val() == "true") {
-      $(".products").show();
+  $(".rating-submit").click(function () {
+    var value = $("input[type=radio][name=rating]:checked").val();
+    if (value) {
+      alert(value);
     } else {
-      $(".products").hide();
+      alert("Nothing is selected");
     }
   });
 });
