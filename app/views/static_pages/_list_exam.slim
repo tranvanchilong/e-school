@@ -10,7 +10,7 @@
               img.card-img-top alt=("KHOA KIEM TRA SQL") src="#{exam.image.image_url}"
         .card-body
           a href="#{exam_details_path(exam_id: exam)}"
-            h5.card-title Bai Test #{exam.name}
+            h5.card-title Bai Test #{exam.name} (chi tiết)
           p.card-text.text Giup on tap noi dung #{exam.name}
           - unless current_user?(@user)
             #select_form

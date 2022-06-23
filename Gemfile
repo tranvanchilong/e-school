@@ -25,6 +25,7 @@ gem "uglifier"
 gem "webpacker", "~> 5.0"
 gem "will_paginate"
 gem "will_paginate-bootstrap4"
+gem "thin"
 
 group :development, :test do
   gem "byebug"

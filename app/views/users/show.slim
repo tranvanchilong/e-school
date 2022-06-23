@@ -1,5 +1,5 @@
 - provide(:title, @user.name)
-.col-lg.9
+.details_profile
   .headerr
     .profile
       h1.header__avata-img= gravatar_for @user
@@ -32,7 +32,7 @@
       .information_right
         h3
           | SỐ LẦN TEST
-        p #{@user_exams.count}
+        p #{@user.user_exams.includes(:exam).count}
         h3
           | SỐ LẦN ĐẬU
-        p #{@user_exams.where(is_passed: true).count}
+        p #{@user.user_exams.includes(:exam).where(is_passed: true).count}

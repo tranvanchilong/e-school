@@ -1,6 +1,7 @@
 .px-4.px-lg-0
     .container.text-white.py-5.text-center
       h1.display-4 Lịch sử bài thi #{@exam.name} 
+      h3.fa.fa-history
     .pb-5
       .container
         .row
@@ -31,6 +32,6 @@
                     td.border-0.align-middle
                       strong  #{user_exam.total_score}
                     td.border-0.align-middle
-                      strong  #{user_exam.is_passed}
+                      strong  = is_passed(user_exam)
                     td.border-0.align-middle
                       = link_to "Xem thêm", client_user_history_exam_path(id: user_exam.id, amount_test: user_exam.total_test), class: "str"

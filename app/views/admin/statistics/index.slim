@@ -21,6 +21,8 @@
                     .py-2.text-uppercase Diểm trung bình
                   th.border-0.bg-light scope="col" 
                     .py-2.text-uppercase Số lượt thi
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase T/g trung bình
               tbody
               - @exams.each do |exam|
                 tr
@@ -39,6 +41,9 @@
                   td.border-0.align-middle
                     strong = UserExam.where(exam_id: exam.id).average(:total_score).truncate(2)
                   td.border-0.align-middle
-                    strong = UserExam.where(exam_id: exam.id).count 
+                    strong = UserExam.where(exam_id: exam.id).count
+                  td.border-0.align-middle
+                    strong =  avg_of_times([UserExam.where(exam_id: exam.id).maximum(:completed_time).to_s, UserExam.where(exam_id: exam.id).minimum(:completed_time).to_s])
                   td.border-0.align-middle
                     a.str href="historys?exam_id=#{exam.id}" = " Xem tất cả"
+                  
