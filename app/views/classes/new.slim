@@ -1,0 +1,23 @@
+- provide :title, t(".title")
+.col-lg-6
+ 
+  .row.from_login
+    .col-md-9.col-md-offset-1
+      .panel.panel-default
+        .panel-heading
+          h2.center= t ".h1_html"
+        .panel-body
+          = form_for(@class) do |f|
+            fieldset
+              .form-group
+                = f.label :name, t("classes.new.name") 
+                = f.text_field :name
+                |
+                = f.label :subject, t("classes.new.subject")
+                = f.text_field :subject
+                = f.label :description, t("classes.new.description")
+                = f.text_field :description
+                = f.hidden_field :teacher , value: current_user.id
+              = f.submit "Tạo lớp học", class: "btn btn-primary"
+    .col-md-3.col-md-offset-1.login_img
+      img.img-fluid alt=("Logo Login") src="/assets/logo_login1.svg"

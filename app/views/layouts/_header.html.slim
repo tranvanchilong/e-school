@@ -1,0 +1,53 @@
+header (class ="navbar navbar-expand-md navbar-light fixed-top bg-light bgg-light")
+  .container
+    html lang="en" 
+  head
+    meta charset="UTF-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    title Document
+    link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /
+    link href="./css/style.css" rel="stylesheet" /
+    link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" /
+  body
+    .header  style="width:405%"
+      .header_left 
+        .logo_fb 
+          | <img width: 500%; alt="Kết quả hình ảnh cho logo facebook"
+          | class="logo" src="/assets/E-school.png" data-atf="1" data-frt="0" /
+        .seach
+          i.fa.fa-search
+          input.input_seach placeholder=("Nhập nội dung tìm kiếm") type="text" value="" /
+      .header_mid
+        /! <div style="height: 28px; width: 28px"
+        a.i.fa.fa-home  href="/"
+        a.i.fa.fa-group 
+        /! </div
+        img.maket height="64" src="https://cdn-icons-png.flaticon.com/128/1198/1198412.png" width="64" /
+      .header_right
+        .header_user
+          .div_user
+            - if logged_in?
+            .row
+              
+                section.user_info
+                  = render 'shared/user_info'
+          span.name_user 
+            = link_to "logout", logout_path, method: :delete 
+
+          
+        .header_right_icon
+          a.item-header-link href="" 
+           img alt="" src="/assets/icon-home.png" /
+        
+          a.item-header-link href="" 
+            img alt="" src="/assets/icon-people.png" style=("object-fit: contain;") /
+          a.item-header-link href="" 
+            img alt="" src="/assets/icon-message.png" style=("object-fit: contain;") /
+          a.item-header-link href="" 
+           img alt="" src="/assets/icon-chuong.png" style=("object-fit: contain;") /
+          a.item-header-link href="" 
+            img alt="" src="/assets/icon-three-line.jpg" style=("object-fit: contain;") /
+    
+
+

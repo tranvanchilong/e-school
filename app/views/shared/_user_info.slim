@@ -1,0 +1,14 @@
+- if logged_in?
+    = link_to gravatar_for(current_user, size: 50), current_user
+    h1
+        |.
+    /   = current_user.name
+    span
+    = link_to "#{current_user.name}", current_user
+-else
+ h1 
+  a.span_left2  href="/login" = " Dang Nhap"
+    
+    / = link_to "(forgot password)", new_password_reset_path
+    / span
+    /   = pluralize(current_user.microposts.count, "micropost")

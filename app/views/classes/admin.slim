@@ -1,0 +1,53 @@
+- provide :title, t(".title")
+.col-lg-9
+  h1.center= t".Quản lý lớp học"
+  table.table.border-bodered.table-manager
+    a  href="../classes/new"
+      i.fa.fa-plus-square
+        
+        = t(".Tạo mới")
+    .px-4.px-lg-0
+  .container.text-white.py-5.text-center  
+  .pb-5
+    .container
+      .row
+          .table-responsive
+            table.table
+              thead
+                tr
+                  th.border-0.bg-light scope="col" 
+                    .p-2.px-3.text-uppercase Lớp
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Giáo viên
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Mô tả
+                  th.border-0.bg-light scope="col" 
+                    .py-2.text-uppercase Xóa
+              tbody
+              - @classes.each do |classe|
+                tr
+                  th.border-0 scope="row" 
+                    .p-2 
+                      .ml-3.d-inline-block.align-middle
+                        h5.mb-0
+                          a.text-dark.d-inline-block.align-middle href="#" #{classe.name}
+                  td.border-0.align-middle
+                    strong #{classe.teacher}
+                  td.border-0.align-middle
+                    strong #{classe.description}
+                  td.border-0.align-middle
+                    a rel="nofollow" data-method="delete" href="#{classe.id}"
+                      i.fa.fa-trash-o
+                   
+                      
+                  td.border-0.align-middle
+                    / = link_to t("Start"), client_exam_path(exam_cart.exam.id), class: "str", type: "button", data: {id: "#{exam_cart.exam.id}", time_limit: "#{exam_cart.exam.time_limit}"}                    
+
+       
+    /   = render "search"
+      - if @exams.length > 0
+          = render @exams
+      - else
+          p.error_search = t"users.exams.index.search"
+  
+    / = will_paginate @exams

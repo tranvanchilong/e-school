@@ -1,0 +1,44 @@
+
+
+h1 All Class
+/ ul.classes
+/   - @classes.each do |classe|
+   
+/       li
+    
+/           .logo_classe
+/             img.avatar-classe alt="#{classe.name}" 
+       
+
+.mt-4
+  .row
+  - @classes.each do |classe|
+    .col-md-4
+      .card.card-course-item.test-exam
+        a href="#"
+        
+             img.card-img-top src="/assets/vr.jpg"
+        /   - else
+        /       img.card-img-top alt=("KHOA KIEM TRA SQL") src="#{classe.image.image_url}"
+        .card-body
+          a href=""
+            h5.card-title  #{classe.name} (chi tiết)
+          p.card-text.text Giao vien #{classe.teacher}
+          p.card-text.text Gioi thieu:  #{classe.description}
+          = form_for UserClasse.new do |f|
+            fieldset
+              .form-group
+                = f.hidden_field :user_id , value: current_user.id
+                = f.hidden_field :classe_id , value: classe.id
+                
+              = f.submit ("Dăng kí lớp"), class: "btn btn-primary"
+          - unless current_user?(@user)
+            / #select_form
+            /   - if current_user.selecting?(classe)
+            /     = form_for(current_user.active_examcarts.find_by(exam_id: exam.id), 
+            /       html: { method: :delete }) do |f|                                          
+            /       = f.submit "Unselect", class: "input"
+            /   - else
+            /     = form_for(current_user.active_examcarts.build) do |f|
+            /       div= hidden_field_tag :exam_id, exam.id
+            /       = f.submit "Select", class: "input select"

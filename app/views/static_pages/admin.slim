@@ -1,0 +1,64 @@
+
+.col-lg-3
+  - if logged_in? && current_user.admin?
+      h2.my-4
+        =  t(".admin_title")
+      .list-group
+        = link_to t(".Quản lí bài thi"), admin_exams_path, class: "list-group-item1"
+        = link_to t(".Quản lí người dùng"), admin_users_path, class: "list-group-item1"
+        = link_to t(".Thông kê Kết quả kiểm tra"), admin_statistics_path, class: "list-group-item1"
+        = link_to t(".Quản lí lớp học"), classes_admin_path, class: "list-group-item1"
+        = link_to t(".Quản lí khóa học"), courses_admin_path, class: "list-group-item1"
+      -if @count_cart
+      -if @count_cart
+        = render 'shared/stats'
+  - else
+      h2.my-4
+        = button_to t(".user_title")
+      .list-group
+        = link_to t(".user_func1"), client_exams_path, class: "list-group-item1"
+        - if logged_in? && current_user.user?
+          = link_to t(".user_func2"), client_user_history_exams_path, class: "list-group-item1"
+          -if @count_cart
+            = render 'shared/stats'
+        - else
+          = link_to t(".user_func2"), "#", class: "list-group-item1"
+
+/ - if logged_in?
+/   = render "static_pages/category"
+/   = render "static_pages/list_exam"
+/ - else
+/   div class= "center jumbotron home"
+/     h1 = t ".header"
+/     h2 = t ".content"
+/     = link_to t(".signup"), signup_path, class: "btn btn-lg btn-primary"
+/   = render "static_pages/list_exam"
+
+
+/ - if logged_in?
+/   .row
+/     aside.col-md-4
+/       section.user_info
+/         = render 'shared/user_info'
+/       section.stats
+/         = render 'shared/stats'
+/       section.micropost_form
+/         = render 'shared/micropost_form'
+/     .col-md-8
+/       h3
+/         | Micropost Feed
+/       = render 'shared/feed'
+/ - else
+/   .center.jumbotron
+/     h1
+/       | Welcome to the Sample App
+/     h2
+/       |  This is the home page for the 
+/       a[href="http://www.railstutorial.org/"]
+/         | Ruby on Rails Tutorial
+/       |  sample application. 
+/     = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"
+/   = link_to image_tag("apple-touch-icon.png", width: 100, alt: "Rails logo"),'http://rubyonrails.org/'
+
+
+

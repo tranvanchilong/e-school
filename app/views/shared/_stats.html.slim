@@ -1,8 +1,8 @@
-- @user ||= current_user
+
 .stats
   - if logged_in?
-    a href="#{selecting_user_path(@user)}" 
-      h6#selecting.stat
+    a href="#{selecting_user_path(current_user)}" 
+      #selecting.stat
         span.glyphicon.glyphicon-shopping-cart = @count_cart
       h6.cart = "Click here to view cart"
 

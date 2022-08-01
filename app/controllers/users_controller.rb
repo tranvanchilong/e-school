@@ -1,18 +1,26 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :selecting]
+  before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy, :selecting]
   before_action :correct_user, only: [:edit, :update, :show, :selecting]
 
   def new
     @user = User.new
   end
 
-  def index
-    @users = User.paginate(page: params[:page])
+  def friends
+    # @users = User.paginate(page: params[:page])
+    @users = User.all.paginate(page: params[:page], per_page: 7)
+  end
+
+  def teachers
+    # @users = User.paginate(page: params[:page])
+    @users = User.all.paginate(page: params[:page], per_page: 7)
   end
 
   def show
+    @user = User.find_by(id: session[:user_id])
     @count_cart = Examcart.where(user_id: session[:user_id]).count
-    @user_exams = @user.user_exams.includes(:exam) 
+    @user_exams = current_user.user_exams.includes(:exam) 
+    @microposts = current_user.microposts.paginate(page: params[:page])
   end
 
   def create

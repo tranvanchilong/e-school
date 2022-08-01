@@ -1,0 +1,24 @@
+.mt-4
+  .row
+  - @courses.each do |course|
+    .col-md-4
+      .card.card-course-item.test-exam
+        a href="#"
+        
+             img.card-img-top src="/assets/course.jpg"
+        /   - else
+        /       img.card-img-top alt=("KHOA KIEM TRA SQL") src="#{classe.image.image_url}"
+        .card-body
+          a href=""
+            h5.card-title  #{course.name} (chi tiết)
+
+          p.card-text.text Gioi thieu:  #{course.description}
+          = form_for UserCourse.new do |f|
+            fieldset
+              .form-group
+                = f.hidden_field :user_id , value: current_user.id
+                = f.hidden_field :course_id , value: course.id
+                
+              = f.submit ("Dăng kí khóa học"), class: "btn btn-primary"
+      
+          - unless current_user?(@user)

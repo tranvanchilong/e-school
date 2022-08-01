@@ -1,0 +1,19 @@
+
+
+/ h1 All Class
+
+/ .mt-4
+/   .row
+/   - @classes.each do |classe|
+/     .col-md-4
+/       .card.card-course-item.test-exam
+/         a href="#"
+        
+/              img.card-img-top src="/assets/vr.jpg"
+
+/         .card-body
+/           a  href="../classes/room"
+/             h5.card-title  #{classe.name} 
+/           p.card-text.text Giao vien #{classe.teacher}
+/           p.card-text.text Gioi thieu:  #{classe.description}
+/           - unless current_user?(@user)

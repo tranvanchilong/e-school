@@ -1,9 +1,11 @@
 class User < ApplicationRecord
   has_many :user_exams, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
   has_many :star_ratings, dependent: :destroy
   has_many :history_do_exams, dependent: :destroy
   has_one :image, as: :imageable, dependent: :destroy
+  has_many :microposts
   accepts_nested_attributes_for :image, reject_if: proc { |attributes| attributes[:image_url].blank? }
   has_many :examcarts
   attr_accessor :remember_token, :reset_token
@@ -19,7 +21,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: Settings.model.user.password_length_min },
                        presence: true
 
-  enum role: { user: 0, admin: 1 }
+  enum role: { user: 0, admin: 1, manager:2 }
 
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
@@ -75,6 +77,10 @@ class User < ApplicationRecord
 
   def selecting? other_exam
     selecting.include?(other_exam)
+  end
+
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private

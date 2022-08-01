@@ -1,0 +1,525 @@
+.box_header2
+  .header2-all.
+    .header2
+      / ul.header2-left
+      /   li.hot
+      /     a  href="classes/user_class"
+      /       span Đăng kí học
+      /   li.new
+      /     a  href="static_pages/introduce"
+      /       span Giới Thiệu
+      /   li.hocthu
+      /     a
+      /       span Giáo Viên
+
+      /   li.chude
+      /     a
+      /       span Học Thử Miễn phí
+      / ul.header2-right
+      /   li.nltc
+      /     a
+      /       span.kp Khám phá khóa học
+      /   li.kpvn
+      /     a
+      /       span.kp Đội ngũ giáo viên
+      /   li.kptg
+      /     a
+      /       span.kp Các học sinh suất sắc
+
+
+.div_index
+      .div_left
+        .div_left1
+          .div_left1-1
+            .gach
+              h2.right-tieude KẾT NỐI VỚI BẠN
+              /!
+                | <span class="gach-in"
+                | ><div class="white_span"
+                | _____________________________
+                | </div></span
+                
+          ul.ul_left1-2
+            li
+              img.left1_img alt="" src="./assets/icon-friends.png" style=("height: 36px; width: 36px") /
+              a.span_left2  href="/users/friends" = "Bạn bè"
+            li
+              img.left1_img alt="" src="./assets/icon-class.png" style=("height: 36px; width: 36px") /
+              a.span_left2  href="/user_classes/index" = "Lớp học"
+            li
+              img.left1_img alt="" src="./assets/icon-teacher.png" style=("height: 36px; width: 36px") /
+              a.span_left2  href="/users/teachers" = "Giáo viên"
+            / li
+            /   img.left1_img alt="" src="./assets/PrjLkDYpYbH.png" style=("height: 36px; width: 36px") /
+            /   a.span_left2  href="/users/friends" = "Căn tin"
+            li
+              img.left1_img alt="" src="./assets/icon-library.png" style=("height: 36px; width: 36px") /
+              a.span_left2  href="/users/friends" = "Thư viện"
+        .div_left2
+          .gach
+            h2.right-tieude THAM GIA
+            /!
+              | <span class="gach-in"
+              | ><div class="white_span">_</div></span
+              
+          ul
+            li.li_left2
+              .li_left2img 
+                img alt="" src=("./assets/icon-course.png") /
+              a.span_left2  href="/courses/show" = " Các Khóa Học"
+            li.li_left2
+              .li_left2img
+                img alt="" src=("./assets/icon-exam.png") /
+              a.span_left2  href="/static_pages/exam" = " Các Bài Thi"
+              ul
+            li.li_left2
+              .li_left2img 
+                img alt="" src=("./assets/240451294_972017880036658_8216888040107327786_n (1).jpg") /
+              a.span_left2  href="/courses/show" = " ĐĂNG KÍ HỌC"
+            li.li_left2
+              .li_left2img
+                img alt="" src=("./assets/240451294_972017880036658_8216888040107327786_n (1).jpg") /
+              a.span_left2  href="/static_pages/home" = "THÊM BẠN BÈ"
+             
+            / li.li_left2
+            /   .li_left2img
+            /     img alt="" src=("./assets/240451294_972017880036658_8216888040107327786_n (1).jpg") /
+            /   span.span_left2 Tieng anh!
+            / li.li_left2
+            /   .li_left2img
+            /     img alt="" src=("./assets/240451294_972017880036658_8216888040107327786_n (1).jpg") /
+            /   span.span_left2 Vật lí
+            / li.li_left2
+            /   .li_left2img
+            /     img alt="" src=("./assets/240451294_972017880036658_8216888040107327786_n (1).jpg") /
+            /   span.span_left2 Hóa học
+            / li.li_left2
+            /   .li_left2img
+            /     img alt="" src=("./assets/240451294_972017880036658_8216888040107327786_n (1).jpg") /
+            /   span.span_left2 Tin học
+      .div_giua
+        .AR
+              div.home
+                div 
+                  img alt="" src=("/assets/.png") /
+                a.span_left2  href="/" = "Diễn đàn"
+              div.metaverse
+                div 
+                  img alt="" src=("/assets/.png") /
+                a.span_left2  href="/static_pages/metaverse" = "Làm nhiệm vụ"
+           
+        .div_giua_bottom
+          .div_giua2
+            .div_giua2-1
+              .div_giua2-1in
+                img alt="" src="./assets/275813192_1973223186218987_6890584232734569076_n.jpg" /
+               
+              - if logged_in?
+                  
+                        = render 'shared/micropost_form'
+                  
+                        = render 'shared/feed'
+                         
+              - else
+               
+            / .div_giua2-2
+            /   .giua2-2in1
+            /     svg.a8c37x1j.ms05siws.l3qrxjdp.b7h9ocf4.fxtw5amg.rgmg9uty.b73ngqbp fill="currentColor" height="1em" viewbox=("0 0 24 24") width="1em" 
+            /       g fill-rule="evenodd" transform=("translate(-444 -156)") 
+            /         g
+            /           path d=("M113.029 2.514c-.363-.088-.746.014-1.048.234l-2.57 1.88a.999.999 0 0 0-.411.807v8.13a1 1 0 0 0 .41.808l2.602 1.901c.219.16.477.242.737.242.253 0 .508-.077.732-.235.34-.239.519-.65.519-1.065V3.735a1.25 1.25 0 0 0-.971-1.22m-20.15 6.563c.1-.146 2.475-3.578 5.87-3.578 3.396 0 5.771 3.432 5.87 3.578a.749.749 0 0 1 0 .844c-.099.146-2.474 3.578-5.87 3.578-3.395 0-5.77-3.432-5.87-3.578a.749.749 0 0 1 0-.844zM103.75 19a3.754 3.754 0 0 0 3.75-3.75V3.75A3.754 3.754 0 0 0 103.75 0h-10A3.754 3.754 0 0 0 90 3.75v11.5A3.754 3.754 0 0 0 93.75 19h10z") transform=("translate(354 158.5)") 
+            /           path d=("M98.75 12c1.379 0 2.5-1.121 2.5-2.5S100.129 7 98.75 7a2.503 2.503 0 0 0-2.5 2.5c0 1.379 1.121 2.5 2.5 2.5") transform=("translate(354 158.5)") 
+            /     | Quay video
+            /   .giua2-2in2
+            /     svg.a8c37x1j.ms05siws.l3qrxjdp.b7h9ocf4.j58f7537.rgmg9uty.b73ngqbp fill="currentColor" height="1em" viewbox=("0 0 24 24") width="1em" 
+            /       g fill-rule="evenodd" transform=("translate(-444 -156)") 
+            /         g
+            /           path d=("m96.968 22.425-.648.057a2.692 2.692 0 0 1-1.978-.625 2.69 2.69 0 0 1-.96-1.84L92.01 4.32a2.702 2.702 0 0 1 .79-2.156c.47-.472 1.111-.731 1.774-.79l2.58-.225a.498.498 0 0 1 .507.675 4.189 4.189 0 0 0-.251 1.11L96.017 18.85a4.206 4.206 0 0 0 .977 3.091s.459.364-.026.485m8.524-16.327a1.75 1.75 0 1 1-3.485.305 1.75 1.75 0 0 1 3.485-.305m5.85 3.011a.797.797 0 0 0-1.129-.093l-3.733 3.195a.545.545 0 0 0-.062.765l.837.993a.75.75 0 1 1-1.147.966l-2.502-2.981a.797.797 0 0 0-1.096-.12L99 14.5l-.5 4.25c-.06.674.326 2.19 1 2.25l11.916 1.166c.325.026 1-.039 1.25-.25.252-.21.89-.842.917-1.166l.833-8.084-3.073-3.557z") transform=("translate(352 156.5)") 
+            /           path d=("m111.61 22.963-11.604-1.015a2.77 2.77 0 0 1-2.512-2.995L98.88 3.09A2.77 2.77 0 0 1 101.876.58l11.603 1.015a2.77 2.77 0 0 1 2.513 2.994l-1.388 15.862a2.77 2.77 0 0 1-2.994 2.513zm.13-1.494.082.004a1.27 1.27 0 0 0 1.287-1.154l1.388-15.862a1.27 1.27 0 0 0-1.148-1.37l-11.604-1.014a1.27 1.27 0 0 0-1.37 1.15l-1.387 15.86a1.27 1.27 0 0 0 1.149 1.37l11.603 1.016z") fill-rule="nonzero" transform=("translate(352 156.5)") 
+            /     span Tai Anh Len
+            /   .giua2-2in3
+            /     svg.a8c37x1j.ms05siws.l3qrxjdp.b7h9ocf4.mu8pnim0.rgmg9uty.b73ngqbp fill="currentColor" height="1em" viewbox=("0 0 24 24") width="1em" 
+            /       g fill-rule="evenodd" transform=("translate(-444 -156)") 
+            /         g
+            /           path d=("M107.285 13c.49 0 .841.476.712.957-.623 2.324-2.837 4.043-5.473 4.043-2.636 0-4.85-1.719-5.473-4.043-.13-.48.222-.957.712-.957h9.522z") transform=("translate(353.5 156.5)") 
+            /           path d=("M114.024 11.5c0 6.351-5.149 11.5-11.5 11.5s-11.5-5.149-11.5-11.5S96.173 0 102.524 0s11.5 5.149 11.5 11.5zm-2 0a9.5 9.5 0 1 0-19 0 9.5 9.5 0 0 0 19 0z") fill-rule="nonzero" transform=("translate(353.5 156.5)") 
+            /           path d=("M99.524 8.5c0 .829-.56 1.5-1.25 1.5s-1.25-.671-1.25-1.5.56-1.5 1.25-1.5 1.25.671 1.25 1.5m8.5 0c0 .829-.56 1.5-1.25 1.5s-1.25-.671-1.25-1.5.56-1.5 1.25-1.5 1.25.671 1.25 1.5m-.739 4.5h-9.522c-.49 0-.841.476-.712.957.623 2.324 2.837 4.043 5.473 4.043 2.636 0 4.85-1.719 5.473-4.043.13-.48-.222-.957-.712-.957m-2.165 2c-.667.624-1.592 1-2.596 1a3.799 3.799 0 0 1-2.596-1h5.192") transform=("translate(353.5 156.5)") 
+            /     span Bieu tuong cam xuc
+          .giua4out
+            .giua4
+              .giua4_img
+                div
+                  img.giua4_img_in alt="" src="./assets/275638848_333760578774928_5433916903240316669_n.jpg" style=("border-radius: 100px;") /
+                div
+                  h2 My Hoa
+                  span.time 1 giờ ·
+              div
+                span ...
+                span X
+            span.conten Nó lạ lắm
+            div
+              img alt="" src="./assets/286401187_4108607816063989_84725963840288798_n.png" /
+            .div_like
+              div
+                i.fa.fa-thumbs-up
+                i.fa.fa-heart
+                span 3,4k
+              div
+                span.comment 380 binh luan
+                span 7 luot chia se
+            ul.ul_comment
+              li
+                i.fa.fa-thumbs-up
+                | Thich
+              li
+                i.fa.fa-comments-o
+                | Binh Luan
+              li
+                i.fa.fa-share
+                | Chia se
+          .giua4out
+            .giua4
+              .giua4_img
+                div
+                  img.giua4_img_in alt="" src="./assets/93279833_1779818735517073_7228013411764797440_n.jpg" /
+                div
+                  h2 Lovelies
+                  span 1 giờ ·
+              div
+                span ...
+                span X
+            span.conten Thế giới đầy những lời nói dối ngọt ngào.
+            div.video
+              iframe allow=("accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture") allowfullscreen="" frameborder="0" height="526" src="https://www.youtube.com/embed/qFQjF9AevBc" title=("YouTube video player") width="571" 
+            .div_like
+              div
+                i.fa.fa-thumbs-up
+                i.fa.fa-heart
+                span 4,2k
+              div
+                span 278 binh luan
+                span 249 luot chia se
+            ul.ul_comment
+              li
+                i.fa.fa-thumbs-up
+                | Thich
+              li
+                i.fa.fa-comments-o
+                | Binh Luan
+              li
+                i.fa.fa-share
+                | Chia se
+      /!
+        | <div class="div_right"
+        | <div class="div_right2out"
+        | <div class="div-right2"
+        | <h3 class="h3_right2">Lời mời kết bạn</h3
+        | <span>Xem them</span
+        | </div
+        | <div class="div_right2in"
+        | <div class="img_right2"
+        | <img
+        | style="border-radius: 100px"
+        | src="./images/287131921_107785065297770_6708889852229721953_n.jpg"
+        | alt=""
+        | \/
+        | </div
+        | <div class=""
+        | <h4 class="h4_right2">Nguyen Thi Huong Giang</h4
+        | <div class="button_right2"
+        | <button>Xac nhan</button
+        | <button>Xoa</button
+        | </div
+        | </div
+        | </div
+        | </div
+        
+        | <div class="div_right4"
+        | <div class="div_right4-1"
+        | <h3>Dang hoat dong</h3
+        | <div
+        | <i class="fa fa-search"></i
+        | <span>...</span
+        | </div
+        | </div
+        | <ul
+        | <li class="li_right4"
+        | <div class="img_right4"
+        | <img
+        | style="border-radius: 100px"
+        | src="./images/275638848_333760578774928_5433916903240316669_n.jpg"
+        | alt=""
+        | \/
+        | </div
+        | <span>My hoa</span
+        | </li
+        | <li class="li_right4"
+        | <div class="img_right4"
+        | <img
+        | style="border-radius: 100px"
+        | src="./images/230343388_2851303195183324_4071331015257718084_n.jpg"
+        | alt=""
+        | \/
+        | </div
+        | <span>Duc tho</span
+        | </li
+        | <li class="li_right4"
+        | <div class="img_right4"
+        | <img
+        | style="border-radius: 100px"
+        | src="./images/264721334_2755507728076706_4840912405104783520_n.jpg"
+        | alt=""
+        | \/
+        | </div
+        | <span>Truong Ba Ngoc</span
+        | </li
+        | </ul
+        | </div
+        | <div class="div_right5"
+        | <div class="div_right5-1"
+        | <h3 class="h3_right5">Cuoc Tro Chuyen Nhom</h3
+        | </div
+        | <ul
+        | <li
+        | <div class="img_right4"
+        | <img
+        | style="width: 25px; border-radius: 100px"
+        | src="./images/279230076_597137884587870_4238646898050421728_n.jpg"
+        | alt=""
+        | \/
+        | </div
+        | <span>Team an nhau</span
+        | </li
+        | <li
+        | <div class="img_right4"
+        | <img
+        | style="width: 25px; border-radius: 100px"
+        | src="./images/143086968_2856368904622192_1959732218791162458_n.png"
+        | alt=""
+        | \/
+        | </div
+        | <span>Duc, Minh va 6 nguoi khac</span
+        | </li
+        | <li
+        | <div class="img_right4"
+        | <img
+        | style="width: 25px; border-radius: 100px"
+        | src="./images/279212267_2043068309185981_3934971744257131532_n.jpg"
+        | alt=""
+        | \/
+        | </div
+        | <span>Hieu, Dat va 8 nguoi khac</span
+        | </li
+        | </ul
+        | </div
+        | </div
+      .div_right
+        .div_right1
+          .div_right1-1
+            .right1-1in
+              img src="https://photo-baomoi.bmcdn.me/w300_r1x1_sm/2022_05_04_294_42494726/bec0850e7d4c9412cd5d.jpg" /
+            .right1-2in
+              h5
+                | Tổng Bí thư: Tăng cường xây dựng, chỉnh đốn Đảng và hệ thống
+                | chính trị đáp ứng yêu cầu trong giai đoạn mới
+              .div_right1-3
+                .right1-3in
+                  img src="https://photo-baomoi.bmcdn.me/bb071048550abc54e51b.png" /
+                span.time_lienquan 173 liên qua
+          .div_right1-1
+            .right1-1in
+              img src="https://photo-baomoi.bmcdn.me/w300_r1x1_sm/2022_05_04_294_42494726/bec0850e7d4c9412cd5d.jpg" /
+            .right1-2in
+              h5
+                | Tổng Bí thư: Tăng cường xây dựng, chỉnh đốn Đảng và hệ thống
+                | chính trị đáp ứng yêu cầu trong giai đoạn mới
+              .div_right1-3
+                .right1-3in
+                  img src="https://photo-baomoi.bmcdn.me/bb071048550abc54e51b.png" /
+                span.time_lienquan 173 liên qua
+          .div_right1-1
+            .right1-1in
+              img src="https://photo-baomoi.bmcdn.me/w300_r1x1_sm/2022_05_04_294_42494726/bec0850e7d4c9412cd5d.jpg" /
+            .right1-2in
+              h5
+                | Tổng Bí thư: Tăng cường xây dựng, chỉnh đốn Đảng và hệ thống
+                | chính trị đáp ứng yêu cầu trong giai đoạn mới
+              .div_right1-3
+                .right1-3in
+                  img src="https://photo-baomoi.bmcdn.me/bb071048550abc54e51b.png" /
+                span.time_lienquan 173 liên qua
+        .div_right2
+          span.dtct ĐỐI TÁC CHÍNH THỨC  
+          ul.doitac
+            li.doitac1
+              img alt=("Báo Tiền Phong") src="https://cdn.worldvectorlogo.com/logos/udemy-2.svg" /
+            li.doitac1
+              img alt=("Báo VTC News") src="https://cdn.worldvectorlogo.com/logos/khan-academy-1.svg" /
+            li.doitac1
+              img alt=("Báo Pháp Luật &amp; Xã Hội") src="https://cdn.worldvectorlogo.com/logos/coursera.svg" /
+          ul.doitac
+            li.doitac1
+              img alt=("Báo Pháp Luật &amp; Xã Hội") src="https://cdn.worldvectorlogo.com/logos/udacity-2.svg" /
+            li.doitac1
+              img.github alt=("Báo Pháp Luật &amp; Xã Hội") src="https://cdn.worldvectorlogo.com/logos/github-2.svg" 
+        .div_right3
+          img.bm_CC alt="" src="./assets/banner_hcm_02-min.png" /
+        .div_right4
+          .div_right4-1
+            .right4-1in
+              img alt=("Thông tin Chính phủ") src="https://static.mediacdn.vn/baochinhphu/image/logo_bcp.png" title=("Thông tin Chính phủ") /
+            h3 THÔNG TIN CHÍNH PHỦ
+          .div_right4-2
+            .right4-2in
+              img.bm_item-focus-avatar loading="lazy" src="./assets/img6131-16553711132271951894023-0-0-938-1500-crop-165537112724626877435.jpg" /
+            h5
+              | Xây dựng văn hóa liêm chính để ‘không dám và không thể tham nhũng’
+          ul.ul_right4-3
+            li
+              span.black_span
+                | Vụ Việt Á chỉ là những 'con sâu bỏ rầu nồi canh' ảnh hưởng tới
+                | ngành y
+            li
+              span.black_span Dự án đường vành đai mở ra một hành lang kinh tế
+        .div_right5
+          h2.diaphuong ĐỊA PHƯƠNG
+          .div_select
+            select.dia_phuong
+              option value="dn"  Da nang
+              option value="qb"  Quang binh
+              option value="na"  Nghe an
+              option value="ht"  Ha tinh
+          .rigth5-1
+            ul.ul_rigth5-1
+              li.li_right5
+                img.bm_CC alt=("Đà Nẵng sôi động thị trường bán lẻ du lịch hè") src="https://photo-baomoi.bmcdn.me/w300_r3x2_sm/2022_06_10_345_42855097/9d499cd773959acbc384.jpg" /
+              li.li_right5-2
+                h5 Đà Nẵng sôi động thị trường bán lẻ du lịch hè
+                .div_rigth5-3
+                  .right5-3in
+                    img.bm_CC alt=("Truyền Hình Thông Tấn") src="https://photo-baomoi.bmcdn.me/c19b8fab6de884b6ddf9.png" /
+                  span.right5-3in3 VNEWS
+            ul.ul_rigth5-1
+              li.li_right5
+                img.bm_CC alt=("Đà Nẵng sôi động thị trường bán lẻ du lịch hè") src="https://photo-baomoi.bmcdn.me/w300_r3x2_sm/2022_06_10_345_42855097/9d499cd773959acbc384.jpg" /
+              li.li_right5-2
+                h5 Đà Nẵng sôi động thị trường bán lẻ du lịch hè
+                .div_rigth5-3
+                  .right5-3in
+                    img.bm_CC alt=("Truyền Hình Thông Tấn") src="https://photo-baomoi.bmcdn.me/c19b8fab6de884b6ddf9.png" /
+                  span.right5-3in3 VNEWS
+            ul.ul_rigth5-1
+              li.li_right5
+                img.bm_CC alt=("Đà Nẵng sôi động thị trường bán lẻ du lịch hè") src="https://photo-baomoi.bmcdn.me/w300_r3x2_sm/2022_06_10_345_42855097/9d499cd773959acbc384.jpg" /
+              li.li_right5-2
+                h5 Đà Nẵng sôi động thị trường bán lẻ du lịch hè
+                .div_rigth5-3
+                  .right5-3in
+                    img.bm_CC alt=("Truyền Hình Thông Tấn") src="https://photo-baomoi.bmcdn.me/c19b8fab6de884b6ddf9.png" /
+                  span.right5-3in3 VNEWS
+        .div_right6
+          .gach
+            h2.right-tieude VIDEO
+          .div_right6in
+            ul.ul_right6
+              li.li_right6-1
+                iframe.ifame_rigth6-1 allow=("accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture") allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/LqdSBYY8FDE" title=("YouTube video player") 
+            h4
+              | 'Người hùng' tay không 'bắt trọn' bé gái rơi khỏi tầng 2 chung
+              | cư
+            li.li_right6-3
+              .righht6-3in
+                img.bm_CC alt="SaoStar" src="https://photo-baomoi.bmcdn.me/42bc76d3ab9042ce1b81.png" /
+              span.time_lienquan 16 phút
+              span.time_lienquan 3 liên quan
+            ul.ul_right6
+              li.li_right6-1
+                iframe.ifame_right6-1 allow=("accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture") allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/LqdSBYY8FDE" title=("YouTube video player") 
+            h4
+              | 'Người hùng' tay không 'bắt trọn' bé gái rơi khỏi tầng 2 chung
+              | cư
+            li.li_right6-3
+              .righht6-3in
+                img.bm_CC alt="SaoStar" src="https://photo-baomoi.bmcdn.me/42bc76d3ab9042ce1b81.png" /
+              span.time_lienquan 16 phút
+              span.time_lienquan 3 liên quan
+            ul.ul_right6
+              li.li_right6-1
+                iframe.ifame_rigth6-1 allow=("accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture") allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/LqdSBYY8FDE" title=("YouTube video player") 
+            h4
+              | 'Người hùng' tay không 'bắt trọn' bé gái rơi khỏi tầng 2 chung
+              | cư
+            li.li_right6-3
+              .righht6-3in
+                img.bm_CC alt="SaoStar" src="https://photo-baomoi.bmcdn.me/42bc76d3ab9042ce1b81.png" /
+              span.time_lienquan 16 phút
+              span.time_lienquan 3 liên quan
+        .div_right7
+          .gach
+            h2.right-tieude TIỆN ÍCH
+            span.gach-in/
+            .white_span _______________________
+          .div_right7-1
+            .right7in1
+              img alt="" src="./images/28.svg" /
+            ul.ul_right7in
+              li 34º
+              li 28º - 35º
+            ul.ul_right7-1in
+              li Nhiều mây
+              li Độ ẩm: 59%
+              li Gió: 6km/h
+              li Khả năng mưa: 11%
+          select.dia_phuong
+            option value="dn"  Da nang
+            option value="qb"  Quang binh
+            option value="na"  Nghe an
+            option value="ht"  Ha tinh
+          ul.ul_right7-3
+            li.li_right7-3in
+              ul.ul_right7-3in
+                li 13/6
+                li
+                  img alt="" src="./images/38.svg" /
+                li 25º - 35º
+                li Mưa giông vào buổi chiều
+            li.li_right7-3in
+              ul.ul_right7-3in
+                li 13/6
+                li
+                  img alt="" src="./images/38.svg" /
+                li 25º - 35º
+                li Mưa giông vào buổi chiều
+            li.li_right7-3in
+              ul.ul_right7-3in
+                li 13/6
+                li
+                  img alt="" src="./images/38.svg" /
+                li 25º - 35º
+                li Mưa giông vào buổi chiều
+            li.li_right7-3in4
+              ul
+                li 13/6
+                li
+                  img alt="" src="./images/38.svg" /
+                li 25º - 35º
+                li Mưa giông vào buổi chiều
+          .div_right7-4
+            ul.div_right7-4in
+              li Thời tiết
+              li Tỷ giá ngoại tệ
+              li Kết quả sổ số
+            ul.div_right7-4in
+              li Lịch vạn niên
+              li Giá vàng
+              li Chứng khoán
+        .div_right8
+          .gach
+            h2.right-tieude XU HƯỚNG
+            span.gach-in/
+            .white_span _______________________
+          ul.ul_rigth8in
+            li ukraine
+            li Gong Oh-kyun
+            li CDC Hà Nội
+      /! rigth

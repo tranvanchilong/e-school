@@ -1,0 +1,13 @@
+a.aaaa  href="../classes/room" = "#{@classes.name} Đăng kí" 
+
+
+h1 All Class
+ul.classes
+  - @classes.each do |classe|
+   
+      li
+    
+          .logo_classe
+            img.avatar-classe alt="#{classe.name}" 
+       
+

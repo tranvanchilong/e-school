@@ -27,6 +27,8 @@ gem "will_paginate"
 gem "will_paginate-bootstrap4"
 gem "thin"
 
+
+
 group :development, :test do
   gem "byebug"
 end

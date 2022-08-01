@@ -1,0 +1,16 @@
+.mt-4
+  .row
+  - @user_classes.each do |user_classe|
+    .col-md-4
+      .card.card-course-item.test-exam
+        a href="#"
+        
+             img.card-img-top src="/assets/vr.jpg"
+        /   - else
+        /       img.card-img-top alt=("KHOA KIEM TRA SQL") src="#{classe.image.image_url}"
+        .card-body
+          a  href="../classes/room"
+            h5.card-title  #{user_classe.classe.name} 
+          p.card-text.text Giao vien #{user_classe.classe.teacher}
+          p.card-text.text Gioi thieu:  #{user_classe.classe.description}
+          - unless current_user?(@user)

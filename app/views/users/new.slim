@@ -10,8 +10,9 @@
           = form_for(@user) do |f|
             fieldset
               .form-group
-                = f.label :name, t("users.new.name")
+                = f.label :name, t("users.new.name") 
                 = f.text_field :name
+                |
                 = f.label :email, t("users.new.email")
                 = f.email_field :email
                 = f.label :password, t("users.new.password")
